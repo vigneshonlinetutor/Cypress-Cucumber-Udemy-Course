@@ -1,1 +1,4 @@
 node_modules
+cypress/cucumber-html-report
+cypress/cucumber-json
+videos
