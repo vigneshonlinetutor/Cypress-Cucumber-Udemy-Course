@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "scripts": "cypress run",
+    "pretest": "node ./cypress/reporting/delete-results.js",
+    "posttest": "node ./cypress/reporting/report.js",
+    "test": "npm run scripts || npm run posttest"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +24,7 @@
     "step_definitions": "cypress/e2e/cucumber/stepDefinitions/*",
     "cucumberJson": {
       "generate": true,
-      "outputFolder": "cypress/cucumber-json",
+      "outputFolder": "cypress/test-results/cucumber-json",
       "filePrefix": "",
       "fileSuffix": ".cucumber"
     }
